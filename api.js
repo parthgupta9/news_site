@@ -10,11 +10,11 @@ async function fetchNews(query) {
   const data = await res.json();
   bindData(data.articles);
 }
-  function bindData(articles){
+  function bindData(article){
     const cardsConatiner=document.getElementById('card_container');
     const newstemplate=document.getElementById('new');
     cardsConatiner.innerHTML='';
-    articles.forEach((article) => {
+    article.forEach((article) => {
         if(!article.urlToImage) return;
         const cardClone= newstemplate.content.cloneNode(true);
         fillDataInCard(cardClone,article);
